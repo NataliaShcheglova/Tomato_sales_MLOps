@@ -11,7 +11,7 @@ before_script:
 build-job:
     stage: build
     script:
-        - echo "Installig packages ...."
+        - echo "Installig packages ..."
 
 
 lintest:
