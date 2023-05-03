@@ -1,9 +1,3 @@
-git #!/usr/bin/env python
-# coding: utf-8
-
-# In[1]:
-
-
 import click
 import pandas as pd
 import seaborn as sns
