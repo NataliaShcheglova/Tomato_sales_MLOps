@@ -12,8 +12,6 @@ build-job:
     stage: build
     script:
         - echo "Installig packages ...."
-        - echo "Building artifact ..."
-        - git archive --format zip --output artifact.zip HEAD
 
 
 lintest:
@@ -22,8 +20,4 @@ lintest:
         - echo "Starting linters ..."
         - pip install flake8
         - flake8 src/data/analyze_data.py     
-
-
-artifacts:
-    paths:
-        - artifact.zip   
+        
