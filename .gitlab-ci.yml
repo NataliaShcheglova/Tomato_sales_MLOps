@@ -3,6 +3,7 @@ image: python:3.9
 stages:
   - build
   - test
+  - deploy
 
 before_script:
   - python --version
@@ -11,14 +12,20 @@ build-job:
   stage: build
   script:
     - echo "Installing packages ..."
-    - tar -czf repo.tar.gz --exclude logs .
-  artifacts:
-    paths:
-      - repo.tar.gz
+    - pip install -r requirements.txt
 
-lintest:
+lint-test:
   stage: test
   script:
     - echo "Starting linters ..."
     - pip install flake8
     - flake8 src/data/analyze_data.py
+
+deploy-job:
+  stage: deploy
+  script:
+    - echo "Deploying artifact..."
+    - tar -czf repo.tar.gz --exclude logs .
+  artifacts:
+    paths:
+      - repo.tar.gz
