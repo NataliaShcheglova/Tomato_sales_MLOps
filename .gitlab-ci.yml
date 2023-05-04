@@ -20,5 +20,4 @@ lintest:
         - echo "Starting linters ..."
         - pip install flake8
         - flake8 src/data/analyze_data.py
-        - flake8 src/data/make_features.py
         
