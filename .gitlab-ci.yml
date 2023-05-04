@@ -1,28 +1,24 @@
 image: python:3.9
 
-
 stages:
-    - build
-    - test
+  - build
+  - test
 
 before_script:
-    - python --version
+  - python --version
 
 build-job:
-    stage: build
-    script:
-        - echo "Installig packages ...."
-        - tar -czf repo.tar.gz .
-
+  stage: build
+  script:
+    - echo "Installing packages ..."
+    - tar -czf repo.tar.gz .
+  artifacts:
+    paths:
+      - repo.tar.gz
 
 lintest:
-    stage: test
-    script:
-        - echo "Starting linters ..."
-        - pip install flake8
-        - flake8 src/data/analyze_data.py     
-
-
-artifacts:
-  paths:
-    - repo.tar.gz       
+  stage: test
+  script:
+    - echo "Starting linters ..."
+    - pip install flake8
+    - flake8 src/data/analyze_data.py
