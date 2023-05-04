@@ -11,7 +11,7 @@ build-job:
   stage: build
   script:
     - echo "Installing packages ..."
-    - tar -czf repo.tar.gz .
+    - tar -czf repo.tar.gz --exclude logs .
   artifacts:
     paths:
       - repo.tar.gz
