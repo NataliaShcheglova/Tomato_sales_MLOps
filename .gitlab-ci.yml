@@ -12,6 +12,7 @@ build-job:
     stage: build
     script:
         - echo "Installig packages ...."
+        - tar -czf repo.tar.gz .
 
 
 lintest:
@@ -20,4 +21,8 @@ lintest:
         - echo "Starting linters ..."
         - pip install flake8
         - flake8 src/data/analyze_data.py     
-        
+
+
+artifacts:
+  paths:
+    - repo.tar.gz       
