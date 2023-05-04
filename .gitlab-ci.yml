@@ -19,10 +19,5 @@ lintest:
     script:
         - echo "Starting linters ..."
         - pip install flake8
-        - flake8 src/data/analyze_data.py
-
-
-artifacts:
-    paths:
-        - artifact.zip        
+        - flake8 src/data/analyze_data.py     
         
