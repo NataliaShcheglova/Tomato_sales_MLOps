@@ -1,16 +1,17 @@
 [tool.poetry]
-name = "tomato-project-mlops"
+name = "tomato-project-k"
 version = "0.1.0"
 description = ""
-authors = ["Reustlin <112853585+Reustlin@users.noreply.github.com>"]
+authors = ["makkate <makurina.kate@gmail.com>"]
 readme = "README.md"
-packages = [{include = "tomato_project_mlops"}]
+packages = [{include = "tomato_project_k"}]
 
 [tool.poetry.dependencies]
 python = "^3.9"
+black = "^23.3.0"
+dvc = "^2.56.0"
 
 
 [build-system]
 requires = ["poetry-core"]
 build-backend = "poetry.core.masonry.api"
-
