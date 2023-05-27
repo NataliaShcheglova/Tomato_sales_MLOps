@@ -1,0 +1,16 @@
+stages:
+  analyze_data:
+    cmd: python src/data/analyze_data.py --input_path data/raw/Tomato.csv --output_path data/interim/data_analyzed.csv
+    deps:
+      - data/raw/Tomato.csv
+      - src/data/analyze_data.py
+    outs:
+      - data/interim/data_analyzed.csv
+
+  make_features:
+    cmd: python src/data/make_features.py --input_path data/interim/data_analyzed.csv --output_path data/processed/data_featured.csv
+    deps:
+      - data/interim/data_analyzed.csv
+      - src/data/make_features.py
+    outs:
+      - data/processed/data_featured.csv

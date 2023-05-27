@@ -1,0 +1,9 @@
+[core]
+    remote = remote
+    autostage = false
+
+['remote "remote"']
+    url = s3://teatral18-s3
+    endpointurl = https://storage.yandexcloud.net/
+    access_key_id =YCAJE708cE1xyNcKHgGMxMKjI
+    secret_access_key=YCN-JQp7GmheLzCOGUDAxLDBU43IRa6IoujPZKT0
